@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice</title>
+    <link rel="stylesheet" href="assets/bootstrap-icons-1.10.3/bootstrap-icons.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <div id="idScreen">
+                <input type="text" id="idCalcul" disabled>
+                <input type="text" id="idResult" disabled>
+                <span class=""></span>
+                <div class="history">
+                    <div class="historyHeader">
+                        Historique
+                    </div>
+                    <div class="historyBody">
+                        <p id="cal0"></p>
+                        <p id="res0"></p>
+
+                        <p id="cal1"></p>
+                        <p id="res1"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="idAc" class="">AC</button>
+                <button type="button" data-key="()" class="">( )</button>
+                <button type="button" data-key="%" class="">%</button>
+                <button type="button" data-key="÷" class="">÷</button>
+
+                <button type="button" data-key="7" class="">7</button>
+                <button type="button" data-key="8" class="">8</button>
+                <button type="button" data-key="9" class="">9</button>
+                <button type="button" data-key="x" class="">x</button>
+
+                <button type="button" data-key="4" class="">4</button>
+                <button type="button" data-key="5" class="">5</button>
+                <button type="button" data-key="6" class="">6</button>
+                <button type="button" data-key="-" class="">-</button>
+
+                <button type="button" data-key="1" class="">1</button>
+                <button type="button" data-key="2" class="">2</button>
+                <button type="button" data-key="3" class="">3</button>
+                <button type="button" data-key="+" class="">+</button>
+
+                <button type="button" data-key="0" class="">0</button>
+                <button type="button" data-key="." class="">.</button>
+                <button type="button" id="idBackSpace" class="">BS</button>
+                <button type="button" id="idEgale" class="">=</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="assets/script.js"></script>
+</body>
+</html>
