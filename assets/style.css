@@ -44,12 +44,17 @@ body {
     display: block;
 }
 
-.showAnimation {
+.show-animation {
     animation: show .25s linear;
 }
 
-.hideAnimation {
+.hide-animation {
     animation: hide .25s linear;
+}
+
+.over-flow {
+    overflow-y: auto;
+    overflow-wrap: break-word;
 }
 
 .container {
@@ -158,7 +163,7 @@ p[id*='res'] {
 }
 
 button {
-    width: 21%;
+    width: 24%;
     height: 54px;
     box-shadow: 0 0 7.5px rgba(56, 56, 56, 0.5);
     outline: none;
