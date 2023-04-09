@@ -5,6 +5,182 @@
 
 @font-face {
     font-family: "bootstrap-icons";
-    src: url('bootstrap-icons-1.10.3/fonts/bootstrap-icons.woff');
+    src: url('bootstrap-icons-1.10.3/fonts/bootstrap-icons.woff2');
 }
 
+@keyframes show {
+    from {
+        width: 0;
+        height: 0;
+    }
+    to {
+        width: 80%;
+        height: 360px;
+    }
+}
+
+@keyframes hide {
+    from {
+        width: 80%;
+        height: 360px;
+    }
+    to {
+        width: 0;
+        height: 0;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000e2;
+    font-family: "bootstrap-icons";
+    margin: 0;
+}
+
+.show {
+    display: block;
+}
+
+.showAnimation {
+    animation: show .25s linear;
+}
+
+.hideAnimation {
+    animation: hide .25s linear;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 420px;
+    height: 580px;
+    background-color: rgb(14, 5, 5);
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#idScreen {
+    width: 100%;
+    height: 120px;
+    background-color: rgb(61, 61, 61);
+    position: relative;
+}
+
+form {
+    width: 88%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+form * {
+    margin-top: 5%;
+    font-size: 1.1em;
+    border-radius: 18px;
+    border: none;
+}
+
+input {
+    margin: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    color: #FFF;
+    outline: none;
+    text-align: right;
+}
+
+input:nth-child(1) {
+    font-size: 1.3em;
+    height: 70px;
+    padding: 30px 10px 10px;
+}
+
+input:nth-child(2) {
+    font-size: 1em;
+    height: 50px;
+    padding: 0 10px;
+}
+
+.history {
+    width: 80%;
+    height: 360px;
+    padding: 15px;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    background-color: rgb(43, 43, 43);
+    border-radius: 15px;
+    color: #fff;
+    box-shadow: 0 0 5px rgba(200, 200, 200, 0.15);
+    display: none;
+    overflow: hidden;
+}
+
+.history * {
+    font-size: 0.9em;
+}
+
+.historyIcon {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.historyIcon::after {
+    font-family: 'bootstrap-icons';
+    content: '\F292';
+    color: rgb(170, 149, 149);
+    font-size: 0.9em;
+}
+
+.historyBody {
+    text-align: right;
+}
+
+p[id*='cal']::before {
+    display: block;
+    margin: 12px -15px 12px -12px;
+    content: "";
+    border-bottom: 1px solid rgb(51, 50, 50);
+}
+
+p[id*='res'] {
+    font-weight: 600;
+}
+
+button {
+    width: 21%;
+    height: 54px;
+    box-shadow: 0 0 7.5px rgba(56, 56, 56, 0.5);
+    outline: none;
+}
+
+button:active {
+    box-shadow: none;
+    font-weight: 900;
+}
+
+#idBackSpace::after {
+    font-family: 'bootstrap-icons';
+    content: '\F159';
+}
+
+@media screen and (max-width: 400px) {
+    .container {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
