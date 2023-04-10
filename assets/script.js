@@ -16,7 +16,7 @@ let temporaryOp;
 let lastOperation;
 let lastDataKey;
 let parentheseLeft = false; // boolean
-let dataKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', 'x', '÷', '%', '•'];
+let dataKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', 'x', '÷', '%', '.'];
 let operationKeys = ['+', '-', 'x', '÷'];
 let historyTab = [];
 
@@ -110,7 +110,7 @@ function fnEqual() {
 formElt.addEventListener('click', fnCalculate);
 function fnCalculate(evt) {
     btnId = evt.target.getAttribute('id');
-    dataKeyValue = evt.target.getAttribute('data-key');
+    dataKeyValue = evt.target.getAttribute('dataKey');
 
     if(dataKeyValue) {
         if(!parentheseLeft && dataKeyValue == '()') {
@@ -152,4 +152,49 @@ function fnCalculate(evt) {
 
     evt.target.blur();
 }
+
+// fonction d'utilisation du clivier de l'appreil
+window.addEventListener('keydown', fnKeyboardUsing)
+function fnKeyboardUsing(evt) {
+    if(dataKeys.includes(evt.dataKey)) {
+        evt.preventDefault();
+        document.querySelector("button[dataKey='"+ evt.dataKey + "']").click();
+    } else {
+        switch (evt.dataKey) {
+            case "Enter":
+            case "=":
+                evt.preventDefault();
+                historySave();
+                fnEqual();
+                break;
+
+            case "Escape":
+            case "Esc":
+                clearCalculator();
+                break;
+
+            case "Backspace":
+                fnBackSpace();
+                fnShowResult();
+                break;
+
+            case "*":
+                document.querySelector("button[dataKey='x']").click();
+                break;
+
+            case "/":
+                document.querySelector("button[dataKey='÷']").click();
+                break;
+
+            case "(":
+            case ")":
+                document.querySelector("button[dataKey='()']").click();
+                break;
+            
+            default:
+                break;
+        }
+    }
+}
+
 
