@@ -2,68 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculatrice</title>
-    <link rel="stylesheet" href="assets/bootstrap-icons-1.10.3/bootstrap-icons.css">
-    <link rel="stylesheet" href="assets/style.css">
+    <title>TP Calculatrice</title>
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
     <div class="container">
-        <form action="">
-            <div id="idScreen">
-                <input type="text" id="idCalcul" disabled>
-                <input type="text" id="idResult" disabled>
-                <span class="historyIcon"></span>
+        <form>
+            <div id="screen">
+                <input type="text" id="calcul" disabled />
+                <input type="text" id="result" disabled />
+
+                <span class="toggleBtn"></span>
                 <div class="history">
                     <div class="historyHeader">
-                        Historique
+                        <span>Historique</span>
                     </div>
-                    <div class="historyBody">
-                        <p id="opCal0"></p>
-                        <p id="opRes0"></p>
-
-                        <p id="opCal1"></p>
-                        <p id="opRes1"></p>
-
-                        <p id="opCal2"></p>
-                        <p id="opRes2"></p>
-
-                        <p id="opCal3"></p>
-                        <p id="opRes3"></p>
+                    <div class="historyData">
+                        <p id="calcul0"></p>
+                        <p id="result0"></p>
+                        <p id="calcul1"></p>
+                        <p id="result1"></p>
+                        <p id="calcul2"></p>
+                        <p id="result2"></p>
                     </div>
                 </div>
             </div>
 
-            <div>
-                <button type="button" id="idAc" class="">AC</button>
-                <button type="button" dataKey="()" class="">( )</button>
-                <button type="button" dataKey="%" class="">%</button>
-                <button type="button" dataKey="÷" class="">÷</button>
-
-                <button type="button" dataKey="7" class="">7</button>
-                <button type="button" dataKey="8" class="">8</button>
-                <button type="button" dataKey="9" class="">9</button>
-                <button type="button" dataKey="x" class="">x</button>
-
-                <button type="button" dataKey="4" class="">4</button>
-                <button type="button" dataKey="5" class="">5</button>
-                <button type="button" dataKey="6" class="">6</button>
-                <button type="button" dataKey="-" class="">-</button>
-
-                <button type="button" dataKey="1" class="">1</button>
-                <button type="button" dataKey="2" class="">2</button>
-                <button type="button" dataKey="3" class="">3</button>
-                <button type="button" dataKey="+" class="">+</button>
-
-                <button type="button" dataKey="0" class="">0</button>
-                <button type="button" dataKey="." class="">•</button>
-                <button type="button" id="idBackSpace" class=""></button>
-                <button type="button" id="idEqual" class="">=</button>
-            </div>
+            <button type="button" id="AC" class="lightGreen">AC</button>
+            <button type="button" key="()" class="lightBlue">()</button>
+            <button type="button" key="%" class="lightBlue">%</button>
+            <button type="button" key="÷" class="lightBlue">&#247;</button>
+            <button type="button" key="7" class="dark">7</button>
+            <button type="button" key="8" class="dark">8</button>
+            <button type="button" key="9" class="dark">9</button>
+            <button type="button" key="x" class="lightBlue">x</button>
+            <button type="button" key="4" class="dark">4</button>
+            <button type="button" key="5" class="dark">5</button>
+            <button type="button" key="6" class="dark">6</button>
+            <button type="button" key="-" class="lightBlue">-</button>
+            <button type="button" key="1" class="dark">1</button>
+            <button type="button" key="2" class="dark">2</button>
+            <button type="button" key="3" class="dark">3</button>
+            <button type="button" key="+" class="lightBlue">+</button>
+            <button type="button" key="0" class="dark">0</button>
+            <button type="button" key="." class="dark">&#8226;</button>
+            <button type="button" id="backSpace" class="dark"></button>
+            <button type="button" id="equal" class="lightGray">=</button>
         </form>
     </div>
-    
-    <script src="assets/script.js"></script>
+
+    <script src="./assets/app.js"></script>
 </body>
 </html>

@@ -1,15 +1,13 @@
 @font-face {
-    font-family: "Digital 7";
-    src: url("fonts/digital-7/digital-7.ttf");
+    font-family: 'bootstrap-icons';
+    src: url('./fonts/bootstrap-icons.woff')
 }
 
-@font-face {
-    font-family: "bootstrap-icons";
-    src: url('bootstrap-icons-1.10.3/fonts/bootstrap-icons.woff2');
-}
-
+/**
+* Le comportement de la fenetre de l'historique (animation)
+*/
 @keyframes show {
-    from {
+    form {
         width: 0;
         height: 0;
     }
@@ -20,7 +18,7 @@
 }
 
 @keyframes hide {
-    from {
+    form {
         width: 80%;
         height: 360px;
     }
@@ -30,74 +28,56 @@
     }
 }
 
+body {
+    background-color: #000000;
+    margin: 0;
+}
+
 * {
     box-sizing: border-box;
 }
 
-body {
-    background-color: #000000e2;
-    font-family: "bootstrap-icons";
-    margin: 0;
-}
-
-.show {
-    display: block;
-}
-
-.show-animation {
-    animation: show .25s linear;
-}
-
-.hide-animation {
-    animation: hide .25s linear;
-}
-
-.over-flow {
-    overflow-y: auto;
-    overflow-wrap: break-word;
-}
-
 .container {
+    width: 400px;
+    height: 560px;
+    margin: 20px auto;
+    padding-top: 20px;
+    background-color: rgb(40, 40, 40);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(200, 200, 200, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 420px;
-    height: 580px;
-    background-color: rgb(14, 5, 5);
-    border-radius: 16px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-#idScreen {
-    width: 100%;
-    height: 120px;
-    background-color: rgb(61, 61, 61);
-    position: relative;
 }
 
 form {
-    width: 88%;
+    margin: 7% 0;
+    width: 87.5%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
 form * {
-    margin-top: 5%;
-    font-size: 1.1em;
-    border-radius: 18px;
+    margin-bottom: 7%;
     border: none;
+    border-radius: 20px;
+    font-size: 1.2em;
+}
+
+/* screen style rules */
+#screen {
+    width:  100%;
+    height: 120px;
+    background-color: rgb(58, 56, 56);
+    position: relative;
 }
 
 input {
     margin: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0);
-    color: #FFF;
+    color: #FFFFFF;
     outline: none;
     text-align: right;
 }
@@ -114,6 +94,21 @@ input:nth-child(2) {
     padding: 0 10px;
 }
 
+/* history style rules */
+.toggleBtn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.toggleBtn::after {
+    font-family: 'bootstrap-icons';
+    content: '\F292';
+    color: rgb(113, 113, 113);
+    font-size: 0.9em;
+}
+
 .history {
     width: 80%;
     height: 360px;
@@ -121,51 +116,60 @@ input:nth-child(2) {
     position: absolute;
     top: 30px;
     right: 10px;
-    background-color: rgb(43, 43, 43);
+    background-color: rgb(44, 44, 44);
     border-radius: 15px;
-    color: #fff;
+    color: #FFFFFF;
     box-shadow: 0 0 5px rgba(200, 200, 200, 0.15);
-    display: none;
     overflow: hidden;
+    display: none;
 }
 
-.history * {
+.history {
     font-size: 0.9em;
 }
 
-.historyIcon {
-    position: absolute;
-    top: 2px;
-    right: 5px;
-    cursor: pointer;
-}
-
-.historyIcon::after {
-    font-family: 'bootstrap-icons';
-    content: '\F292';
-    color: rgb(170, 149, 149);
-    font-size: 0.9em;
-}
-
-.historyBody {
+.historyData {
     text-align: right;
 }
 
-p[id*='cal']::before {
+p[id*='calcul']::before {
     display: block;
     margin: 12px -15px 12px -12px;
     content: "";
     border-bottom: 1px solid rgb(51, 50, 50);
 }
 
-p[id*='res'] {
+p[id*='result']::before {
     font-weight: 600;
 }
 
+/* button style rules */
+#backSpace::after {
+    font-family: 'bootstrap-icons';
+    content: '\F159';
+}
+
+.lightGreen {
+    background-color: rgb(159, 226, 226);
+}
+
+.lightBlue {
+    background-color: rgb(76, 181, 252);
+}
+
+.lightGray {
+    background-color: #FFFFFF;
+}
+
+.dark {
+    background-color: rgb(58, 56, 56);
+    color: #FFFFFF;
+}
+
 button {
-    width: 24%;
-    height: 54px;
-    box-shadow: 0 0 7.5px rgba(56, 56, 56, 0.5);
+    width: 20.1%;
+    height: 55px;
+    box-shadow: 0 0 8px rgba(200, 200, 200, 0.5);
     outline: none;
 }
 
@@ -174,9 +178,21 @@ button:active {
     font-weight: 900;
 }
 
-#idBackSpace::after {
-    font-family: 'bootstrap-icons';
-    content: '\F159';
+.overFlow {
+    overflow-y: auto;
+    overflow-wrap: break-word
+}
+
+.show {
+    display: block;
+}
+
+.showAnimation {
+    animation: show .25s linear;
+}
+
+.hideAnimation {
+    animation: hide .25s linear;
 }
 
 @media screen and (max-width: 400px) {
